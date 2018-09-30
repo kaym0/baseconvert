@@ -1,0 +1,43 @@
+#binary-conversion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.conversion-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bp3-form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.conversion-input {
+  margin: 20px;
+}
+
+.conversion-button {
+  margin-bottom: 10px;
+  background-color: #74b9ff!important;
+  box-shadow: none;
+}
+
+.conversion-title {
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+}
+.conversion-result-text {
+  font-family: Lato, sans-serif;
+  margin-bottom: 20px;
+}
+
+.conversion-result-label {
+  font-family: Helvetica, sans-serif; 
+}
