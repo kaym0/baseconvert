@@ -20,11 +20,11 @@ class BinaryPage extends Component {
       octal: "",
       hexidecimal: ""
     };
-    this.updateBinary = this.updateBinary.bind(this);
-    this.convertBinary = this.convertBinary.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.convert = this.convert.bind(this);
   }
 
-  convertBinary = () => {
+  convert = () => {
     const { binary } = this.state;
 
     if (/^[01]+$/.test(binary)) {
@@ -48,7 +48,7 @@ class BinaryPage extends Component {
     }
   };
 
-  updateBinary = e => {
+  onChange = e => {
     this.setState({
       binary: e.target.value
     });
@@ -68,14 +68,14 @@ class BinaryPage extends Component {
               <InputGroup
                 className="conversion-input"
                 placeholder="Input binary"
-                value={decimal}
+                value={binary}
                 onChange={this.onChange}
               />
               <Button
                 disabled={binary.toString().length > 0 ? false : true}
                 className="conversion-button"
                 text="Convert"
-                onClick={this.convertBinary}
+                onClick={this.convert}
                 rightIcon={<Icon className="convert-icon" icon="refresh" />}
               />
             </div>
