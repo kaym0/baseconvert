@@ -6,7 +6,8 @@ import {
   FormGroup,
   TextArea,
   Text,
-  Button
+  Button,
+  Icon
 } from "@blueprintjs/core";
 
 class DecimalPage extends Component {
@@ -24,12 +25,14 @@ class DecimalPage extends Component {
   }
 
   convert = () => {
-    const { decimal  } = this.state;
+    const { decimal } = this.state;
 
     if (/^[0-9]+$/.test(decimal)) {
-      let bin = parseInt(decimal).toString(2);
-      let oct = parseInt(decimal).toString(8);
-      let hex = parseInt(decimal).toString(16).toUpperCase();
+      let bin = Number(decimal).toString(2);
+      let oct = Number(decimal).toString(8);
+      let hex = Number(decimal)
+        .toString(16)
+        .toUpperCase();
 
       this.setState({
         hexidecimal: hex,
@@ -55,24 +58,32 @@ class DecimalPage extends Component {
     const { binary, decimal, hexidecimal, octal } = this.state;
     return (
       <div id="binary-conversion">
-        <Card className="conversion-card" elevation={3}>
+        <Card
+          className="conversion-card col-xs-6 col-md-5 col-lg-4 col-xl-3"
+          elevation={3}
+        >
           <FormGroup>
-            <Text className="conversion-title">Convert Decimal</Text>
-            <InputGroup
-              className="conversion-input"
-              placeholder="Decimal"
-              value={decimal}
-              onChange={this.onChange}
-            />
-            <Button
-              disabled={decimal.toString().length > 0 ? false : true}
-              rightIcon="refresh"
-              className="conversion-button"
-              text="Convert"
-              onClick={this.convert}
-            />
+            <Text className="conversion-title col-xs-12 col-md-12 col-lg-12 col-xl-12">
+              Convert Decimal
+            </Text>
+            <div id="inputs">
+              <InputGroup
+                className="conversion-input"
+                placeholder="Decimal"
+                value={decimal}
+                onChange={this.onChange}
+              />
+              <Button
+                disabled={decimal.toString().length > 0 ? false : true}
+                rightIcon={<Icon className="convert-icon" icon="refresh"/>}
+                className="conversion-button"
+                text="Convert"
+                onClick={this.convert}
+              />
+            </div>
             <Text className="conversion-result-label"> Binary </Text>
             <TextArea
+              fill
               readOnly
               className="conversion-result-text"
               value={binary}
@@ -80,12 +91,14 @@ class DecimalPage extends Component {
             <Text className="conversion-result-label"> Octal </Text>
             <TextArea
               readOnly
+              fill
               className="conversion-result-text"
               value={octal}
             />
             <Text className="conversion-result-label"> Hexidecimal </Text>
             <TextArea
               readOnly
+              fill
               className="conversion-result-text"
               value={hexidecimal}
             />

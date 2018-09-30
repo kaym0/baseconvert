@@ -57,7 +57,7 @@ class DecimalPage extends Component {
     const { binary, decimal, hexidecimal, octal } = this.state;
     return (
       <div id="binary-conversion">
-        <Card className="conversion-card" elevation={3}>
+        <Card className="conversion-card col-xs-6 col-md-5 col-lg-4 col-xl-3" elevation={3}>
           <FormGroup>
             <Text className="conversion-title">Convert Octal</Text>
             <InputGroup
@@ -65,13 +65,6 @@ class DecimalPage extends Component {
               placeholder="Octal"
               value={octal}
               onChange={this.onChange}
-            />
-            <Button
-              disabled={octal.toString().length > 0 ? false : true}
-              rightIcon="refresh"
-              className="conversion-button"
-              text="Convert"
-              onClick={this.convert}
             />
             <Text className="conversion-result-label"> Decimal </Text>
             <TextArea
@@ -90,6 +83,13 @@ class DecimalPage extends Component {
               readOnly
               className="conversion-result-text"
               value={hexidecimal}
+            />
+            <Button
+              disabled={octal.toString().length > 0 ? false : true}
+              rightIcon="refresh"
+              className="conversion-button"
+              text="Convert"
+              onClick={this.convert}
             />
           </FormGroup>
         </Card>

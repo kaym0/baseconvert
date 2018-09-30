@@ -24,7 +24,7 @@ class DecimalPage extends Component {
   }
 
   convert = () => {
-    const { hexidecimal  } = this.state;
+    const { hexidecimal } = this.state;
 
     if (/^[0-9A-Fa-f]+$/.test(hexidecimal)) {
       let bin = parseInt(hexidecimal, 16).toString(2);
@@ -55,7 +55,7 @@ class DecimalPage extends Component {
     const { binary, decimal, hexidecimal, octal } = this.state;
     return (
       <div id="binary-conversion">
-        <Card className="conversion-card" elevation={3}>
+        <Card className="conversion-card col-xs-6 col-md-5 col-lg-4 col-xl-3" elevation={3}>
           <FormGroup>
             <Text className="conversion-title">Convert Hexidecimal</Text>
             <InputGroup
@@ -64,13 +64,7 @@ class DecimalPage extends Component {
               value={hexidecimal}
               onChange={this.onChange}
             />
-            <Button
-              disabled={hexidecimal.toString().length > 0 ? false : true}
-              rightIcon="refresh"
-              className="conversion-button"
-              text="Convert"
-              onClick={this.convert}
-            />
+
             <Text className="conversion-result-label"> Decimal </Text>
             <TextArea
               readOnly
@@ -88,6 +82,13 @@ class DecimalPage extends Component {
               readOnly
               className="conversion-result-text"
               value={octal}
+            />
+            <Button
+              disabled={hexidecimal.toString().length > 0 ? false : true}
+              rightIcon="refresh"
+              className="conversion-button"
+              text="Convert"
+              onClick={this.convert}
             />
           </FormGroup>
         </Card>

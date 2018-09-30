@@ -1,0 +1,109 @@
+#app {
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  height: 110vh;
+}
+
+#binary-conversion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.conversion-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.bp3-form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.conversion-input {
+}
+
+
+#inputs {
+  flex: 1;
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  margin: 7.5%;
+  justify-content: space-around;
+}
+
+
+div > button.bp3-button.conversion-button {
+  color: #FAFAFA;
+  font-family: Lato;
+  box-shadow: none;
+  margin: 0px;
+  background-image: none;
+  border: 3px solid #54a0ff;
+  border-radius: 15px;
+  background-color: #54a0ff;
+}
+
+
+
+button.bp3-button > span.convert-icon {
+  color: #FAFAFA;
+}
+div > button.bp3-button.conversion-button:disabled {
+  box-shadow: none;
+  background-image: none;
+  border: 3px solid #74b9ff;
+  border-radius: 15px;
+  background-color:#74b9ff;
+
+}
+div > button.bp3-button.conversion-button:active {
+  box-shadow: none;
+  background-image: none;
+  border-radius: 15px;
+  background-color: #74b9ff;
+  transition: 0.15s box-shadow;
+  border: solid #74b9ff 2px;
+  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #64a9ee;
+}
+
+
+button.bp3-button.conversion-button:hover {
+  background-image: none;
+  border: 3px solid #64a9ee;
+  border-radius: 15px;
+  background-color: #64a9ee;
+  box-shadow: none;
+}
+button.conversion-button:focus {
+  box-shadow: none;
+  background-image: none;
+  border: 3px solid #74b9ff;
+  border-radius: 15px;
+  background-color:#74b9ff;
+  outline: none;
+}
+
+.conversion-title {
+  text-align: center;
+  font-family: Lato, sans-serif;
+  font-size: 36px;
+}
+
+.conversion-result-text {
+  font-family: Open Sans, sans-serif;
+  margin-bottom: 10px;
+  resize: none;
+}
+
+.conversion-result-label {
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+}

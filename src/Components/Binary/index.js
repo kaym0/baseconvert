@@ -28,7 +28,9 @@ class BinaryToDecimal extends Component {
 
     if (/^[01]+$/.test(binary)) {
       let bin = parseInt(binary, 2).toString(10);
-      let hex = parseInt(binary, 2).toString(16).toUpperCase();
+      let hex = parseInt(binary, 2)
+        .toString(16)
+        .toUpperCase();
       let oct = parseInt(binary, 2).toString(8);
 
       this.setState({
@@ -55,7 +57,7 @@ class BinaryToDecimal extends Component {
     const { binary, decimal, hexidecimal, octal } = this.state;
     return (
       <div id="binary-conversion">
-        <Card className="conversion-card" elevation={3}>
+        <Card className="conversion-card col-xs-6 col-md-5 col-lg-4 col-xl-3" elevation={3}>
           <FormGroup>
             <Text className="conversion-title">Convert Binary</Text>
             <InputGroup
@@ -63,13 +65,6 @@ class BinaryToDecimal extends Component {
               placeholder="Binary"
               value={binary}
               onChange={this.updateBinary}
-            />
-            <Button
-              disabled={binary.toString().length > 0 ? false : true}
-              rightIcon="refresh"
-              className="conversion-button"
-              text="Convert"
-              onClick={this.convertBinary}
             />
             <Text className="conversion-result-label"> Decimal </Text>
             <TextArea
@@ -88,6 +83,13 @@ class BinaryToDecimal extends Component {
               readOnly
               className="conversion-result-text"
               value={hexidecimal}
+            />
+            <Button
+              disabled={binary.toString().length > 0 ? false : true}
+              rightIcon="refresh"
+              className="conversion-button"
+              text="Convert"
+              onClick={this.convertBinary}
             />
           </FormGroup>
         </Card>
