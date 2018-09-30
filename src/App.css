@@ -1,5 +1,8 @@
 #app {
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  background-image: url('./assets/about.png');
+  background-size: contain;
+  background-repeat: repeat;
+  /*background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);*/
   height: 110vh;
 }
 
