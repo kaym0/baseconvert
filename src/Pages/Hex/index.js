@@ -6,7 +6,8 @@ import {
   FormGroup,
   TextArea,
   Text,
-  Button
+  Button,
+  Icon
 } from "@blueprintjs/core";
 
 class DecimalPage extends Component {
@@ -55,40 +56,47 @@ class DecimalPage extends Component {
     const { binary, decimal, hexidecimal, octal } = this.state;
     return (
       <div id="binary-conversion">
-        <Card className="conversion-card col-xs-6 col-md-5 col-lg-4 col-xl-3" elevation={3}>
-          <FormGroup>
-            <Text className="conversion-title">Convert Hexidecimal</Text>
-            <InputGroup
-              className="conversion-input"
-              placeholder="Hexidecimal"
-              value={hexidecimal}
-              onChange={this.onChange}
-            />
-
+        <Card
+          className="conversion-card  col-xs-7 col-md-5 col-lg-4 col-xl-3"
+          elevation={3}
+        >
+          <FormGroup className="form-group">
+            <Text className="conversion-title col-xs-12 col-md-12 col-lg-12 col-xl-12">Convert Hexidecimal</Text>
+            <div id="inputs">
+              <InputGroup
+                className="conversion-input"
+                placeholder="Input hexidecimal"
+                value={hexidecimal}
+                onChange={this.onChange}
+              />
+              <Button
+                disabled={hexidecimal.toString().length > 0 ? false : true}
+                className="conversion-button"
+                text="Convert"
+                onClick={this.convert}
+                rightIcon={<Icon className="convert-icon" icon="refresh" />}
+              />
+            </div>
             <Text className="conversion-result-label"> Decimal </Text>
             <TextArea
+              fill
               readOnly
               className="conversion-result-text"
               value={decimal}
             />
             <Text className="conversion-result-label"> Binary </Text>
             <TextArea
+              fill
               readOnly
               className="conversion-result-text"
               value={binary}
             />
             <Text className="conversion-result-label"> Octal </Text>
             <TextArea
+              fill
               readOnly
               className="conversion-result-text"
               value={octal}
-            />
-            <Button
-              disabled={hexidecimal.toString().length > 0 ? false : true}
-              rightIcon="refresh"
-              className="conversion-button"
-              text="Convert"
-              onClick={this.convert}
             />
           </FormGroup>
         </Card>

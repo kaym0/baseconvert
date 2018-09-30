@@ -13,6 +13,7 @@
 
 .conversion-card {
   display: flex;
+  height: 90%;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
@@ -29,8 +30,12 @@
 }
 
 
+.form-group {
+  width: 90%;
+}
+
 #inputs {
-  flex: 1;
+  height: 60px;
   width: 100%; 
   display: flex;
   align-items: center;
@@ -45,7 +50,7 @@ div > button.bp3-button.conversion-button {
   box-shadow: none;
   margin: 0px;
   background-image: none;
-  border: 3px solid #54a0ff;
+  border: none;
   border-radius: 15px;
   background-color: #54a0ff;
 }
@@ -55,36 +60,33 @@ div > button.bp3-button.conversion-button {
 button.bp3-button > span.convert-icon {
   color: #FAFAFA;
 }
+
 div > button.bp3-button.conversion-button:disabled {
   box-shadow: none;
   background-image: none;
-  border: 3px solid #74b9ff;
   border-radius: 15px;
   background-color:#74b9ff;
-
 }
+
 div > button.bp3-button.conversion-button:active {
   box-shadow: none;
   background-image: none;
   border-radius: 15px;
-  background-color: #74b9ff;
+  background-color: #2e86de;
   transition: 0.15s box-shadow;
-  border: solid #74b9ff 2px;
-  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #64a9ee;
+  box-shadow: 0 0 0 2px #FFF, 0 0 0 4px #2e86de;
 }
 
 
 button.bp3-button.conversion-button:hover {
   background-image: none;
-  border: 3px solid #64a9ee;
   border-radius: 15px;
-  background-color: #64a9ee;
+  background-color: #2e86de;
   box-shadow: none;
 }
 button.conversion-button:focus {
   box-shadow: none;
   background-image: none;
-  border: 3px solid #74b9ff;
   border-radius: 15px;
   background-color:#74b9ff;
   outline: none;
@@ -93,7 +95,7 @@ button.conversion-button:focus {
 .conversion-title {
   text-align: center;
   font-family: Lato, sans-serif;
-  font-size: 36px;
+  font-size: 32px;
 }
 
 .conversion-result-text {

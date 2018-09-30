@@ -59,17 +59,17 @@ class DecimalPage extends Component {
     return (
       <div id="binary-conversion">
         <Card
-          className="conversion-card col-xs-6 col-md-5 col-lg-4 col-xl-3"
+          className="conversion-card col-xs-7 col-md-5 col-lg-4 col-xl-3"
           elevation={3}
         >
-          <FormGroup>
+          <FormGroup className="form-group">
             <Text className="conversion-title col-xs-12 col-md-12 col-lg-12 col-xl-12">
               Convert Decimal
             </Text>
             <div id="inputs">
               <InputGroup
                 className="conversion-input"
-                placeholder="Decimal"
+                placeholder="Input decimal"
                 value={decimal}
                 onChange={this.onChange}
               />
